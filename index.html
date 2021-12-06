@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>Car deals</title>
+    <link rel="stylesheet" href="resources/material-desing-lite/material.min.css">
+    <script src="resources//material-desing-lite/material.min.js"></script>
+
+    <!-- App Name -->
+    <meta name="apple-mobile-web-app-title" content="Car Deals">
+    <meta name="application-name" content="Car Deals">
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+
+    <!-- Browser desktops -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#f44336">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+    <meta name="theme-color" content="#f44336">
+
+    <style>
+        .center {
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Car deals</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <button
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-layout-ripple-effect">Refresh</button>
+                </nav>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+                <!-- Dynamic data here -->
+            </div>
+            <div class="center">
+                <button
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-layout-ripple-effect">Show
+                    more</button>
+            </div>
+            <button id="clickme">Click me button</button>
+        </main>
+    </div>
+
+    <div id="test">tsting</div>
+
+    <script id="car-card" type="text/template">
+        <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--6pd" style="background-image: url('{{image}}')" onclick="pageEvents.loadCarPage('{{details-id}}')">
+            <div class="mdl-card__title">
+                <span mdl-card__title-text>{{title}  ${{price}}</span>
+            </div>
+         </div>
+    </script>
+
+    <script src="/resources/localforage.min.js"></script>
+    <script src="/resources//localforage-setitems.js"></script>
+    <script src="js/app.js" type="module"></script>
+
+    <script>
+        const btn = document.querySelector('#clickme');
+        btn.addEventListener('click', e => {
+            console.log(e.currentTarget);
+        })
+    </script>
+</body>
+
+</html>
